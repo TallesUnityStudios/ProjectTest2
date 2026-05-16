@@ -9,7 +9,7 @@ public class ItemManager : MonoBehaviour
 {
     public static ItemManager Instace;
 
-    public int coins;
+    public SOint coins;
     public TextMeshProUGUI coinText;
 
     private void Awake()
@@ -31,18 +31,18 @@ public class ItemManager : MonoBehaviour
 
     private void Reset()
     {
-        coins = 0;
+        coins.value = 0;
         UpdateUI();
     }
 
     public void AddCoins(int amount = 1)
     {
-        coins += amount;
+        coins.value += amount;
         UpdateUI();
     }
 
     private void UpdateUI()
     {
-        UIinGameManager.UpdateTextCoins(coins.ToString());
+        //UIinGameManager.UpdateTextCoins(coins.value.ToString());
     }
 }
