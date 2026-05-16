@@ -2,17 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemCollactableCoins : MonoBehaviour
+public class ItemCollactableCoins : ItemCollactableBase
 {
-    // Start is called before the first frame update
-    void Start()
+    protected override void OnCollect()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        base.OnCollect();
+        ItemManager.Instace.AddCoins();
     }
 }

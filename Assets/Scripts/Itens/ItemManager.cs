@@ -7,10 +7,24 @@ using UnityEditor.PackageManager.Requests;
 
 public class ItemManager : MonoBehaviour
 {
+    public static ItemManager Instace;
+
     public int coins;
     public TextMeshProUGUI coinText;
 
-    void Start()
+    private void Awake()
+    {
+        if (Instace == null)
+        {
+            Instace = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void Start()
     {
         Reset();
     }

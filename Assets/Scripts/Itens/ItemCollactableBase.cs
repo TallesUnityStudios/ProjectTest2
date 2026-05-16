@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class ItemCollactableBase : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public string CompararTag = "Player";
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.CompareTag(CompararTag))
+        {
+            Collect();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    protected virtual void Collect()
     {
-        
+        gameObject.SetActive(false);
+        OnCollect();
+    }
+
+    protected virtual void OnCollect()
+    {
+
     }
 }
