@@ -17,10 +17,15 @@ public class PlayerMovement : MonoBehaviour
     public float runningSpeed = 20;
 
     [Header("JumpingPlayer")]
-    public float jumpForce = 15;
+    /*public float jumpForce = 15;
     public float jumpScaleY = 1.2f;
     public float jumpScaleX = 0.8f;
-    public float animationDuration = .5f;
+    public float animationDuration = .5f;*/
+    public SOFloat soJumpForce;
+    public SOFloat soJumpScaleY;
+    public SOFloat soJumpScaleX;
+    public SOFloat soAnimationDuration;
+
     public Ease ease = Ease.OutBack;
 
     [Header("Animations Running")]
@@ -103,7 +108,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            myRigidbody.velocity = Vector2.up * jumpForce;
+            myRigidbody.velocity = Vector2.up * soJumpForce.value;
             myRigidbody.transform.localScale = Vector2.one;
             animator.SetTrigger(triggerJump);
            
@@ -115,7 +120,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleScaleJumping()
     {
-        myRigidbody.transform.DOScaleY(jumpScaleY, animationDuration).SetLoops(2, LoopType.Yoyo).SetEase(ease);
-        myRigidbody.transform.DOScaleX(jumpScaleX, animationDuration).SetLoops(2, LoopType.Yoyo).SetEase(ease);
+        myRigidbody.transform.DOScaleY(soJumpScaleY.value, soAnimationDuration.value).SetLoops(2, LoopType.Yoyo).SetEase(ease);
+        myRigidbody.transform.DOScaleX(soJumpScaleX.value, soAnimationDuration.value).SetLoops(2, LoopType.Yoyo).SetEase(ease);
     }
 }
