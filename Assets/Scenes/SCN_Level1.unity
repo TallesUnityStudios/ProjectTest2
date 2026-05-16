@@ -4360,10 +4360,10 @@ MonoBehaviour:
   friction: {x: 0.1, y: 0}
   speed: 10
   runningSpeed: 20
-  jumpForce: 15
-  jumpScaleY: 1.2
-  jumpScaleX: 0.8
-  animationDuration: 0.5
+  soJumpForce: {fileID: 11400000, guid: 34a3d86e9e4740c4ca835488f60ac00e, type: 2}
+  soJumpScaleY: {fileID: 11400000, guid: edc642ef8feebd042a96cf9607768182, type: 2}
+  soJumpScaleX: {fileID: 11400000, guid: aa671e13ae79a8145a84ce5d112e1774, type: 2}
+  soAnimationDuration: {fileID: 11400000, guid: 3de05a704e153874fb8e019fa620e734, type: 2}
   ease: 27
   boolRun: Run
   boolFlashRun: FlashRun
