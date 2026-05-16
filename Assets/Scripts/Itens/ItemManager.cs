@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using DG.Tweening;
 using ProjectTest.Core.Singleton;
 using UnityEditor.PackageManager.Requests;
 
