@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
             myRigidbody.velocity = new Vector2(-_currentSpeed, myRigidbody.velocity.y);
             if (myRigidbody.transform.localScale.x != -1)
             {
-                myRigidbody.transform.DOScaleX(-1, .1f);
+                myRigidbody.transform.DOScaleX(-1, soPlayerSetup.animationDuration);
             }
             animator.SetBool(soPlayerSetup.boolRun, true);
 
@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
             myRigidbody.velocity = new Vector2(_currentSpeed, myRigidbody.velocity.y);
             if (myRigidbody.transform.localScale.x != 1)
             {
-                myRigidbody.transform.DOScaleX(1, .1f);
+                myRigidbody.transform.DOScaleX(1, soPlayerSetup.animationDuration);
             }
             animator.SetBool(soPlayerSetup.boolRun, true);
         }
