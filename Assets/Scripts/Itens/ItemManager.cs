@@ -27,7 +27,7 @@ public class ItemManager : MonoBehaviour
     private void Start()
     {
         Reset();
-    }
+    }   
 
     private void Reset()
     {
@@ -43,6 +43,6 @@ public class ItemManager : MonoBehaviour
 
     private void UpdateUI()
     {
-        coinText.text = coins.ToString();
+        UIinGameManager.UpdateTextCoins(coins.ToString());
     }
 }
