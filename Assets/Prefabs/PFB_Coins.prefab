@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CompararTag: Player
-  particleSystem: {fileID: 4699375079612225730, guid: 2df6f0f8e324f154d8152a5553d2e5ef, type: 3}
+  effectSystem: {fileID: 594358697768013187}
 --- !u!1001 &5262489882881447233
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -225,6 +225,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2df6f0f8e324f154d8152a5553d2e5ef, type: 3}
+--- !u!198 &594358697768013187 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4699375079612225730, guid: 2df6f0f8e324f154d8152a5553d2e5ef, type: 3}
+  m_PrefabInstance: {fileID: 5262489882881447233}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3668031375269597042 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8930472793633643059, guid: 2df6f0f8e324f154d8152a5553d2e5ef, type: 3}
