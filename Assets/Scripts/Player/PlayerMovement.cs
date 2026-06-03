@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEditor.ShaderGraph.Internal;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -13,12 +14,29 @@ public class PlayerMovement : MonoBehaviour
     [Header("Setup")]
     public SOPlayerSetup soPlayerSetup;
 
+    [Header("Jumping Collision Check")]
+    public Collider2D collider2D;
+    public float distToGround;
+    public float spaceToGround = .1f;
+    public ParticleSystem jumpVFX;
+
     private void Awake()
     {
         if (healManager != null)
         {
             healManager.OnKill += OnPlayerKill;
         }
+
+        if (collider2D != null)
+        {
+            distToGround = collider2D.bounds.extents.y;
+        }
+    }
+
+    private bool IsGrounded()
+    {
+        Debug.DrawRay(transform.position, -Vector2.up, Color.red, distToGround + spaceToGround);
+        return Physics2D.Raycast(transform.position, -Vector2.up, distToGround + spaceToGround);
     }
 
     private void OnPlayerKill()
@@ -29,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        IsGrounded();
         HandleMoviments();
         HandleJumping();
     }
@@ -84,7 +103,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleJumping()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
             myRigidbody.velocity = Vector2.up * soPlayerSetup.jumpForce;
             myRigidbody.transform.localScale = Vector2.one;
@@ -92,6 +111,15 @@ public class PlayerMovement : MonoBehaviour
             DOTween.Kill(myRigidbody.transform);
 
             HandleScaleJumping();
+            PlayJumpVFX();
+        }
+    }
+
+    private void PlayJumpVFX()
+    {
+        if (jumpVFX != null)
+        {
+            jumpVFX.Play();
         }
     }
 
