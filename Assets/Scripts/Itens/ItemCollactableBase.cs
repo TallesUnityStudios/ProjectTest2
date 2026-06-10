@@ -7,6 +7,9 @@ public class ItemCollactableBase : MonoBehaviour
     public string CompararTag = "Player";
     public ParticleSystem effectSystem;
 
+    [Header("SOUNDS")]
+    public AudioSource audioSource;
+
     private void Awake()
     {
         if (effectSystem != null) effectSystem.transform.SetParent(null);   
@@ -29,5 +32,6 @@ public class ItemCollactableBase : MonoBehaviour
     protected virtual void OnCollect()
     {
        if (effectSystem != null) effectSystem.Play();
+       if (audioSource != null) audioSource.Play();
     }
 }
