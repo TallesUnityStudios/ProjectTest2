@@ -8,7 +8,7 @@ public class ItemCollactableBase : MonoBehaviour
     public ParticleSystem effectSystem;
 
     [Header("SOUNDS")]
-    public AudioSource audioSource;
+    public AudioClip collectSound;
 
     private void Awake()
     {
@@ -25,13 +25,15 @@ public class ItemCollactableBase : MonoBehaviour
 
     protected virtual void Collect()
     {
-        gameObject.SetActive(false);
         OnCollect();
+        gameObject.SetActive(false);
     }
 
     protected virtual void OnCollect()
     {
        if (effectSystem != null) effectSystem.Play();
-       if (audioSource != null) audioSource.Play();
+
+        if (collectSound != null)
+            AudioSource.PlayClipAtPoint(collectSound, transform.position);
     }
 }

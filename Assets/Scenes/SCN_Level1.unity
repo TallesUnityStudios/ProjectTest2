@@ -478,11 +478,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &386465764 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7897442370794564974, guid: 85834a331e275584c89da5f40e1fd4c9, type: 3}
-  m_PrefabInstance: {fileID: 4526871625584617370}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &394303427
 GameObject:
   m_ObjectHideFlags: 0
@@ -15246,14 +15241,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_Coins
       objectReference: {fileID: 0}
-    - target: {fileID: 8842406649378944300, guid: 85834a331e275584c89da5f40e1fd4c9, type: 3}
-      propertyPath: timeToHide
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8842406649378944300, guid: 85834a331e275584c89da5f40e1fd4c9, type: 3}
-      propertyPath: graphicItem
-      value: 
-      objectReference: {fileID: 386465764}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

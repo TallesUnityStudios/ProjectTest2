@@ -43,14 +43,14 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 94e37d7926f5a744091b72590895ae9a, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 85
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -297,7 +297,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CompararTag: Player
   effectSystem: {fileID: 594358697768013187}
-  audioSource: {fileID: 4486108005440961774}
+  collectSound: {fileID: 8300000, guid: 94e37d7926f5a744091b72590895ae9a, type: 3}
 --- !u!1001 &5262489882881447233
 PrefabInstance:
   m_ObjectHideFlags: 0
